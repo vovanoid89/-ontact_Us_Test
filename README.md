@@ -10,3 +10,6 @@ Selectors data and methods are located in package "pages" in the page "ContactUs
 The test it is Maven project with using of JUnit framework.
 
 You can download this GitHub repository and run the test in JAVA IDE(Intellij IDEA, Eclipse).
+ 
+The main test - https://github.com/vovanoid89/Contact_Us_Test/blob/master/src/test/java/Tests/ContactUsTest.java
+The page for test - https://github.com/vovanoid89/Contact_Us_Test/blob/master/src/test/java/pages/ContactUsPage.java
