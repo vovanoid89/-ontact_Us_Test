@@ -7,30 +7,55 @@ import org.openqa.selenium.support.PageFactory;
 
 
 public class ContactUsPage {
-    public ContactUsPage(WebDriver) {
+
+    public ContactUsPage( WebDriver driver) {
         PageFactory.initElements(driver, this);
-                this.driver = driver;
+        this.driver = driver;
     }
+
     public WebDriver driver;
 
-    @FindBy (id = "email")
-    private WebElement emailField;
 
-    @FindBy (id = "name")
+    @FindBy(xpath = "//form/span[1]/input")
     private WebElement nameField;
 
-    @FindBy (xpath = "send")
-    private WebElement sendButton ;
+    @FindBy(xpath = "//form/span[2]/input")
+    private WebElement emailField;
 
-    public void inputEmail(String emailTest) {
-        emailField.sendKeys(emailTest);
-    }
+    @FindBy(xpath = "//form/span[3]/input")
+    private WebElement prefixField;
+
+    @FindBy(xpath = "//form/span[4]/input")
+    private WebElement phoneField;
+
+    @FindBy(xpath = "//form/input[5]")
+    private WebElement sendButton;
+
+    @FindBy (xpath = "//form/div[2]")
+    private WebElement getMessage;
 
     public void inputName(String name) {
         nameField.sendKeys(name);
     }
 
+    public void inputEmail(String email) {
+        emailField.sendKeys(email);
+    }
+
+    public void inputPrefix (String prefix) {
+        prefixField.sendKeys(prefix);
+    }
+
+    public void inputPhone (String phone){
+        phoneField.sendKeys (phone);
+    }
+
+
     public void clickButton() {
         sendButton.click();
-
     }
+    public String getMessageText() {
+            String Message = getMessage.getText();
+            return Message;
+    }
+}
